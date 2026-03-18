@@ -9,7 +9,7 @@ A two-device proximity sensing system that detects how close an object or person
 
 1. Sensor Device: Handheld Proximity Sensor
 
-The sensor device is a compact, handheld proximity-sensing unit designed to detect nearby objects and transmit processed proximity data wirelessly to a separate display device. It emphasizes directional sensing and portable, battery-powered operation.
+The sensor device is a compact, handheld proximity-sensing unit designed to detect nearby objects and transmit processed proximity data wirelessly to a separate display device. It emphasizes directional sensing and portable, USBC-powered operation.
 
 Hardware Components
 
@@ -21,19 +21,15 @@ Status Indicator: LED
 
 Battery: 3.7V LiPo battery
 
-Power Control: Slide switch
 
 How It Works
 
-The infrared distance sensor continuously measures the distance between the device and nearby objects. The ESP32-C3 samples the analog sensor output and applies basic digital signal processing, including smoothing and thresholding, to reduce noise and generate a stable proximity level. This processed proximity data is transmitted to the display device using Bluetooth Low Energy (BLE).
+The infrared distance sensor continuously measures the distance between the device and nearby objects. The ESP32-C3 samples the analog sensor output and applies basic digital signal processing, including smoothing and thresholding, to reduce noise and generate a stable proximity level. This processed proximity data is transmitted to the display device using ESP-NOW.
 
-Power Design
-
-The sensor device is battery-powered using a 3.7V LiPo battery. Low-power operation is supported through intermittent sampling and BLE communication, making the device suitable for portable use.
 
 2. Display Device: Proximity Gauge Display
 
-The display device is a standalone physical interface that visualizes proximity information received from the sensor device. It provides continuous, intuitive feedback through a moving gauge needle and LED indicators.
+The display device is a standalone physical interface that visualizes proximity information received from the sensor device. It provides continuous, intuitive feedback through a moving gauge needle and LED indicators and a buzzer.
 
 Hardware Components
 
@@ -43,21 +39,27 @@ Actuator: Stepper motor driving a gauge needle
 
 Visual Indicator: LED
 
-User Input: Physical button / switch
+Sound Indicatior: Passive buzzer
+
+User Input: Physical press button switch
 
 Battery: 3.7V LiPo battery
 
 Sketch
 ![sketch](https://github.com/user-attachments/assets/3f74d47c-5d92-4212-a854-cd29027f152b)
 
+Safe range: >150 cm. Display sensor has no reaction within this range.
+Warning range: 100-150 cm. The stepper motor needle rotates 90 degree to the middle/vertical position to indicate detection.
+Alart range: <100 cm. The stepper motor needle rotates 180 degree all the way to the left to indicate detection, with LED light up and the buzzer buzzing.
+
 
 How It Works
 
-The display device receives proximity data from the sensor device via BLE. The ESP32-C3 maps the received proximity value to a corresponding needle angle and controls the stepper motor to move the gauge needle accordingly. LEDs provide additional status feedback, such as indicating safe or alert proximity ranges.
+The display device receives proximity data from the sensor device via ESP-NOW. The ESP32-C3 maps the received proximity value to a corresponding needle angle and controls the stepper motor to move the gauge needle accordingly. LED and buzzer provide additional status feedback, such as indicating safe or alert proximity ranges.
 
 User Interaction
 
-A physical button or switch allows basic user interaction, such as powering the device on or switching operating modes. The display continuously reflects proximity changes without requiring screen-based interaction.
+A physical button allows basic user interaction, such as powering the device on or switching operating modes. The display continuously reflects proximity changes without requiring screen-based interaction.
 
 3. System Architecture
 3.1 Communication Diagram
