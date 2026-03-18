@@ -13,7 +13,7 @@ The sensor device is a compact, handheld proximity-sensing unit designed to dete
 
 Hardware Components
 
-Microcontroller: ESP32-C3 (Bluetooth Low Energy)
+Microcontroller: ESP32-C3 
 
 Distance Sensor: Sharp GP2Y0A21YK0F infrared distance sensor
 
@@ -41,8 +41,6 @@ Microcontroller: ESP32-C3
 
 Actuator: Stepper motor driving a gauge needle
 
-Motor Driver: ULN2003
-
 Visual Indicator: LED
 
 User Input: Physical button / switch
@@ -64,7 +62,7 @@ A physical button or switch allows basic user interaction, such as powering the 
 3. System Architecture
 3.1 Communication Diagram
 
-The system consists of two independent, battery-powered devices connected via Bluetooth Low Energy. The sensor device acts as the BLE server, while the display device functions as the BLE client, receiving proximity updates in real time.
+The system consists of two independent, battery-powered devices connected via ESP-NOW. The sensor device acts as the server, while the display device functions as the client, receiving proximity updates in real time.
 
 3.2 Workflow
 ![workflow](https://github.com/user-attachments/assets/2d046adb-15eb-4f32-b05e-80aa41b27e37)
@@ -80,7 +78,7 @@ The sensor device measures distance using the IR sensor.
 
 Raw sensor data is filtered and processed on the ESP32-C3.
 
-Processed proximity data is transmitted via BLE.
+Processed proximity data is transmitted via ESP-NOW.
 
 The display device receives the data and updates the gauge needle and LEDs accordingly.
 
