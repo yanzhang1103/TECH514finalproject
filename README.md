@@ -2,6 +2,9 @@
 CatGuard
 Proximity-Based Alert & Visualization System
 
+<img width="355" height="355" alt="Screenshot 2026-03-18 at 13 08 12" src="https://github.com/user-attachments/assets/0ea1c011-64cf-4ba7-b54e-7d1838e60303" />
+
+
 A two-device proximity sensing system that detects how close an object or person is and provides intuitive physical feedback through a gauge needle and LED indicators. The system focuses on translating continuous proximity data into stable, non-screen-based feedback that can support spatial awareness and proximity alerts.
 
 1. Sensor Device: Handheld Proximity Sensor
