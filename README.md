@@ -87,3 +87,9 @@ The display device receives the data and updates the gauge needle and LEDs accor
 Critical Components and PCB Design
 <img width="1203" height="458" alt="Screenshot 2026-03-18 at 13 07 39" src="https://github.com/user-attachments/assets/8e02c4bd-c370-4437-8783-15206b0b84d0" />
 
+Live Demo
+
+
+https://github.com/user-attachments/assets/be7072d3-836d-4ff1-a74b-e89300e7f144
+
+
