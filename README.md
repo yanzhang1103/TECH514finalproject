@@ -69,6 +69,9 @@ The system consists of two independent, battery-powered devices connected via Bl
 diagram
 ![diagram](https://github.com/user-attachments/assets/faebd0c1-51a2-4e58-a2c8-28e8386782d8)
 
+<img width="474" height="476" alt="Screenshot 2026-03-18 at 13 06 34" src="https://github.com/user-attachments/assets/25c1770e-8532-42f8-a488-be3b717e1850" />
+<img width="478" height="480" alt="Screenshot 2026-03-18 at 13 06 46" src="https://github.com/user-attachments/assets/d957c259-3404-4ac6-8c33-a7e53f7cf6a4" />
+
 
 The sensor device measures distance using the IR sensor.
 
@@ -77,3 +80,7 @@ Raw sensor data is filtered and processed on the ESP32-C3.
 Processed proximity data is transmitted via BLE.
 
 The display device receives the data and updates the gauge needle and LEDs accordingly.
+
+Critical Components and PCB Design
+<img width="1203" height="458" alt="Screenshot 2026-03-18 at 13 07 39" src="https://github.com/user-attachments/assets/8e02c4bd-c370-4437-8783-15206b0b84d0" />
+
