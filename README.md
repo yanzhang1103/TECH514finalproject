@@ -1,4 +1,5 @@
 # TECH514finalproject
+CatGuard
 Proximity-Based Alert & Visualization System
 
 A two-device proximity sensing system that detects how close an object or person is and provides intuitive physical feedback through a gauge needle and LED indicators. The system focuses on translating continuous proximity data into stable, non-screen-based feedback that can support spatial awareness and proximity alerts.
